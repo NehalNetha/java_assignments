@@ -73,6 +73,29 @@ public class StudentFunction {
                 }
             
         }
+
+        public void searchByName() {
+
+            System.out.println("Enter PRN to search:");
+            String searchPrn = scan.nextLine();
+  
+            boolean found = false;
+            for (Student student : students) {
+                if (student.getName().equals(searchPrn)) {
+                    System.out.println("Student Found:");
+                    System.out.println("Name: " + student.getName());
+                    System.out.println("PRN: " + student.getPrn());
+                    System.out.println("DOB: " + student.getDob());
+                    System.out.println("Marks: " + student.getMarks());
+                    found = true;
+                }
+            }
+  
+            if (!found) {
+                System.out.println("Student with PRN " + searchPrn + " not found.");
+            }
+        
+    }
         
 
 
